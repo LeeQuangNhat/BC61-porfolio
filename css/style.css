@@ -1,0 +1,125 @@
+.navbar-nav .nav-item:hover a{
+    /* important đc sử dụng khi muốn đè hết tất cả css của thuộc tính đag đc sử dụng */
+    color: green!important
+}
+.navbar-nav .nav-item::after{
+    content: '';
+    background-color: green;
+    width: 0%;
+    height: 2px;
+    display: block;
+    transition: all 0.5s;
+}
+.navbar-nav .nav-item:hover::after{
+    width: 100%;
+}
+.navbar-nav .active a{
+    color: green !important;
+}
+.navbar-nav .active::after{
+    width: 100%;
+}
+
+.carousel-item{
+    height: 100%;
+    position: relative;   
+}
+.carousel-item img{
+    height: 100%;
+}
+.carousel_title{
+    /* cách 2 canh giữa nội dung
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%); */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(39,43,54,.5);
+    color: white;
+}
+.carousel_title img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.carousel_title h2{
+    font-size: 56px;
+}
+.carousel_title p{
+    font-size: 24px;
+}
+.carousel-indicators [data-bs-target] {
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+    background-color: green;
+}
+
+
+/* project css */
+.project_content .nav-pills .nav-link.active{
+    color: white !important;
+    background-color: green;
+    border-color: green !important;
+}
+
+.project_item .item_text{
+    transition: all 1s;
+    border-radius: 0 0 16px 16px;
+    border: 1px solid transparent;
+    border-top: none;
+}
+.project_item:hover .item_text{
+    border: 1px solid green;
+    border-top: none;
+}
+.project_item h3{
+    transition: all 1s;
+}
+.project_item:hover h3{
+    color:  green;
+}
+
+
+
+.available{
+    background-image: url(../img/3.jpg);
+    background-attachment: fixed;
+    position: relative;
+}
+.available::before{
+    content: "";
+    background-color: rgba(7,10,12,.72);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.available .available_item{
+    background: rgba( 255, 255, 255, 0.2 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 1.5px );
+    -webkit-backdrop-filter: blur( 1.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+/* mobile <576px */
+@media screen and (max-width: 576px) {
+    .project .tab-pane .row{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .available .available_item{
+        margin-bottom: 20px;
+    }
+}
